@@ -1,0 +1,67 @@
+aid: ovation
+name: Ovation
+description: >-
+  Ovation is an AI-first guest experience and feedback platform for restaurants,
+  founded by Zack Oates and voted the #1 guest feedback platform in a
+  RestaurantOwner.com survey. It uses a frictionless, SMS-based two-question
+  survey to capture real-time guest sentiment on- and off-premise, then applies
+  AI to categorize feedback across 35+ restaurant-specific topics, surface
+  operational insights, generate guest-recovery responses, manage online
+  reviews, and run text marketing campaigns. Ovation connects to 50+ POS, online
+  ordering, and loyalty systems, including Olo, to source guest interactions.
+  These are pre-built partner integrations; Ovation does not appear to publish a
+  public, self-service developer API or API documentation, so integration access
+  is arranged directly with the company.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Restaurant
+  - Guest Feedback
+  - Guest Experience
+  - Reputation Management
+  - SMS Marketing
+  - Analytics
+url: https://raw.githubusercontent.com/api-evangelist/ovation/refs/heads/main/apis.yml
+created: '2026-06-02'
+modified: '2026-06-02'
+specificationVersion: '0.19'
+apis:
+  - aid: ovation:rest-api
+    name: Ovation Integrations
+    description: >-
+      Ovation captures guest feedback through frictionless integrations with
+      online ordering, POS, and loyalty platforms such as Olo, then routes
+      sentiment data into its guest-recovery, reputation, and analytics
+      workflows. Integrations are delivered as pre-built partner connections
+      rather than a documented public API; no public API reference, base URL, or
+      authentication details are published, and integration access is arranged
+      directly with Ovation.
+    humanURL: https://ovationup.com/integrations/
+    tags:
+      - Integrations
+      - Guest Feedback
+    properties:
+      - type: Documentation
+        url: https://ovationup.com/integrations/
+common:
+  - type: Website
+    url: https://ovationup.com/
+  - type: Documentation
+    url: https://ovationup.com/integrations/
+  - type: SignUp
+    url: https://ovationup.com/pricing/
+  - type: Login
+    url: https://v2.ovationup.com/login
+  - type: Pricing
+    url: https://ovationup.com/pricing/
+  - type: Support
+    url: https://ovationup.com/contact-us/
+  - type: Blog
+    url: https://ovationup.com/blog/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/ovationup
+  - type: X
+    url: https://x.com/ovationup
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
