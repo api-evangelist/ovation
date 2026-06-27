@@ -77,7 +77,7 @@ common:
     url: https://ovation.gitbook.io/
   - type: GitHubOrganization
     url: https://github.com/ovationup
-  - type: SignUp
+  - type: Signup
     url: https://ovationup.com/pricing/
   - type: Login
     url: https://v2.ovationup.com/login
