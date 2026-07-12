@@ -68,6 +68,8 @@ apis:
         title: Olo Integration
         url: https://go.ovationup.com/integration/
 common:
+  - type: DomainSecurity
+    url: security/ovation-domain-security.yml
   - type: Website
     url: https://ovationup.com/
   - type: Documentation
