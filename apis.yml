@@ -18,7 +18,18 @@ description: >-
   self-serve Ovation API. Integration access is arranged directly with the
   company.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ovation.png
 tags:
   - Restaurant
   - Guest Feedback
@@ -28,45 +39,9 @@ tags:
   - Analytics
 url: https://raw.githubusercontent.com/api-evangelist/ovation/refs/heads/main/apis.yml
 created: '2026-06-02'
-modified: '2026-06-02'
+modified: '2026-07-25'
 specificationVersion: '0.19'
-apis:
-  - aid: ovation:rest-api
-    name: Ovation Integrations
-    description: >-
-      Ovation captures guest feedback through frictionless integrations with
-      online ordering, POS, loyalty, reservations, and digital signage
-      platforms, then routes sentiment data into its guest-recovery,
-      reputation, and analytics workflows. Integrations are delivered as
-      pre-built partner connections rather than a documented public API; no
-      public API reference, base URL, or self-serve authentication is
-      published. Technical connections are inbound and partner-driven (for
-      example, Olo delivers order and guest webhook events to Ovation using a
-      shared-secret key, configured through Olo's customer success and developer
-      support), and integration access is arranged directly with Ovation.
-      Online ordering partners include Olo, Incentivio, ChowNow, Lunchbox,
-      Flipdish, Bbot, Appfront, Captain AI, Ordering360, OrderB4, and xDine; POS
-      partners include Toast, Square, SpotOn, Revel, Auphan, CBS NorthStar, QU
-      Beyond POS, and Crisp; loyalty partners include Paytronix, Punchh, Thanx,
-      Como, Spendgo, CityGro by Patch, and Incentivio; with OpenTable
-      (reservations), Glyde (table pay), and Raydiant (digital signage).
-    humanURL: https://ovationup.com/integrations/
-    tags:
-      - Integrations
-      - Guest Feedback
-      - Webhooks
-      - Point Of Sale
-      - Online Ordering
-      - Loyalty
-    properties:
-      - type: Documentation
-        url: https://ovationup.com/integrations/
-      - type: Documentation
-        title: Onboarding & Integration Guide
-        url: https://ovation.gitbook.io/
-      - type: Documentation
-        title: Olo Integration
-        url: https://go.ovationup.com/integration/
+apis: []
 common:
   - type: DomainSecurity
     url: security/ovation-domain-security.yml

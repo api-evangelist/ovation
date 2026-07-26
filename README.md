@@ -21,10 +21,6 @@ Ovation is an AI-first guest experience and feedback platform for restaurants, f
 
 ## APIs
 
-### Ovation Integrations
-Ovation captures guest feedback through frictionless integrations with online ordering, POS, loyalty, reservations, and digital signage platforms, then routes sentiment data into its guest-recovery, reputation, and analytics workflows. Integrations are delivered as pre-built partner connections rather than a documented public API; no public API reference, base URL, or self-serve authentication is published. Technical connections are inbound and partner-driven (for example, Olo delivers order and guest webhook events to Ovation using a shared-secret key, configured through Olo's customer success and developer support), and integration access is arranged directly with Ovation. Online ordering partners include Olo, Incentivio, ChowNow, Lunchbox, Flipdish, Bbot, Appfront, Captain AI, Ordering360, OrderB4, and xDine; POS partners include Toast, Square, SpotOn, Revel, Auphan, CBS NorthStar, QU Beyond POS, and Crisp; loyalty partners include Paytronix, Punchh, Thanx, Como, Spendgo, CityGro by Patch, and Incentivio; with OpenTable (reservations), Glyde (table pay), and Raydiant (digital signage).
-
-**Human URL:** [https://ovationup.com/integrations/](https://ovationup.com/integrations/)
 
 #### Tags:
 
