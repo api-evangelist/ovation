@@ -9,8 +9,12 @@ description: >-
   operational insights, generate guest-recovery responses, manage online
   reviews, and run text marketing campaigns. Ovation connects to 50+ POS, online
   ordering, and loyalty systems, including Olo, to source guest interactions.
-  These are pre-built partner integrations; Ovation does not publish a public,
-  self-service developer API or API reference. Where integration is technical it
+  These are pre-built partner integrations. Ovation does operate an API — its
+  Summer 2025 release announced API User Management, "easily create, edit, and
+  remove users via API", and the API host api.ovationup.com is live — but no
+  public API reference, OpenAPI definition, developer portal, or SDK is
+  published anywhere, and anonymous calls to that host are refused. Where
+  integration is technical it
   is inbound and partner-driven: for example, Ovation receives Olo webhook events
   (OrderPlaced, OrderClosed, OrderCancelled, GuestOptIn, UserOptOut, and similar)
   authenticated with a shared secret, and the connection is configured directly
@@ -39,7 +43,7 @@ tags:
   - Analytics
 url: https://raw.githubusercontent.com/api-evangelist/ovation/refs/heads/main/apis.yml
 created: '2026-06-02'
-modified: '2026-07-25'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 apis: []
 common:
@@ -54,7 +58,7 @@ common:
     url: https://ovation.gitbook.io/
   - type: GitHubOrganization
     url: https://github.com/ovationup
-  - type: Signup
+  - type: SignUp
     url: https://ovationup.com/pricing/
   - type: Login
     url: https://v2.ovationup.com/login
@@ -68,6 +72,36 @@ common:
     url: https://www.linkedin.com/company/ovationup
   - type: X
     url: https://x.com/ovationup
+  - type: TermsOfService
+    url: https://ovationup.com/terms-of-use/
+  - type: PrivacyPolicy
+    url: https://ovationup.com/privacy-policy/
+  - type: Compliance
+    title: SOC 2 Type 2 certification stated in the Data Processing Agreement
+    url: https://ovationup.com/data-processing-agreement/
+  - type: Conformance
+    url: conformance/ovation-conformance.yml
+  - type: ChangeLog
+    title: Seasonal product release notes
+    url: changelog/ovation-changelog.yml
+  - type: Lifecycle
+    url: lifecycle/ovation-lifecycle.yml
+  - type: Plans
+    url: plans/ovation-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/ovation-rate-limits.yml
+  - type: Packages
+    url: packages/ovation-packages.yml
+  - type: Webhooks
+    title: Olo webhook event catalog Ovation subscribes to
+    url: asyncapi/ovation-olo-webhooks.yml
+  - type: LLMsTxt
+    url: llms/ovation-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1
