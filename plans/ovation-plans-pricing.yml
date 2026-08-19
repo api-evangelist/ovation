@@ -1,0 +1,40 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+provider: Ovation
+providerId: ovation
+generated: '2026-08-13'
+method: searched
+source: https://ovationup.com/pricing/
+modified: '2026-08-13'
+description: >-
+  Ovation publishes NO priced tiers. The pricing page is a quote-request form, not a
+  price list. plan_count is 0 by observation, not by omission.
+docs: https://ovationup.com/pricing/
+plan_count: 0
+plans: []
+model: custom-quote
+currency: null
+free_tier: false
+free_trial: false
+self_service_signup: false
+detail: >-
+  The page states "Only pay for what you need. Chat with us and we will have a custom
+  quote for you within 24 hours." The form collects company name, contact details and a
+  location-count band — Single, 2-3, 4-24, 25-149, 150-1K, Over 1K — and quotes both
+  physical locations and ghost kitchens. No price, currency, billing period, included
+  quota or overage rate is published for any product.
+products_named_without_price:
+  - name: Retention Marketing
+    price: null
+  - name: Digital Table Touch
+    price: null
+  - name: Full CX Suite
+    price: null
+api_pricing: none
+api_pricing_note: >-
+  Nothing on the pricing page, the integrations page, or any release post attaches a
+  price, quota, or add-on line to API or integration access. Ovation's API is bundled
+  into the tenant relationship rather than metered or sold separately.
+x-evidence:
+  - {url: 'https://ovationup.com/pricing/', status: 200}
+  - {url: 'https://ovationup.com/integrations/', status: 200}

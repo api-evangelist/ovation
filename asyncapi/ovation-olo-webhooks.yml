@@ -1,0 +1,90 @@
+generated: '2026-08-13'
+method: searched
+source: https://ovation.gitbook.io/ovation-onboarding/integrations/olo-integration
+spec_type: none
+description: >-
+  Ovation's documented webhook surface. IMPORTANT DIRECTION OF FLOW: Ovation is the
+  webhook CONSUMER here, not the publisher. Ovation operates HTTPS receiver endpoints
+  (a production endpoint and a sandbox endpoint) and asks Olo to POST guest and order
+  events to them; the event names and payload schemas are defined by Olo, not by
+  Ovation. This artifact records the event catalog Ovation itself publishes on its own
+  docs host as part of its onboarding guide, so an integrator can see exactly which
+  events an Ovation connection subscribes to. Ovation publishes no AsyncAPI document
+  and no outbound webhook catalog of its own, and none was fabricated here.
+role: subscriber
+publisher: Olo
+publisher_slug: olo
+transport: https-webhook
+security:
+  mechanism: shared-secret
+  detail: >-
+    Olo issues a Production Shared Secret Key and a Sandbox Shared Secret Key to
+    Ovation for the connection. Quoted from the Ovation onboarding guide: "requesting
+    to be subscribed to the webhook events, indicating the endpoints the payloads
+    should be sent to and requesting the shared secret keys."
+  keys_public: false
+endpoints:
+  - environment: production
+    url: null
+    note: >-
+      Templated as "{{PRODUCTION ENDPOINT}}" in Ovation's published request template.
+      The concrete receiver URL is exchanged privately per connection and is not
+      published; recorded as null rather than guessed.
+  - environment: sandbox
+    url: null
+    note: Templated as "{{SANDBOX ENDPOINT}}" in the same published template.
+onboarding:
+  gate: >-
+    The restaurant customer must request the integration from their Olo CSM and sign a
+    data waiver authorizing Ovation to access the data. Ovation then emails
+    developersupport@olo.com to be subscribed to the events. There is no self-service
+    path and no public developer portal.
+  self_service: false
+events:
+  - name: OrderPlaced
+    category: order
+  - name: OrderClosed
+    category: order
+  - name: OrderCancelled
+    category: order
+  - name: OrderAdjusted
+    category: order
+  - name: ScheduledOrderFired
+    category: order
+  - name: ScheduledOrderFailed
+    category: order
+  - name: StandingOrderInstantiationFailed
+    category: order
+  - name: ExternalOrderEvent
+    category: order
+  - name: DispatchStatusUpdate
+    category: fulfillment
+  - name: UserSignedUp
+    category: guest
+  - name: UserUpdated
+    category: guest
+  - name: GuestOptIn
+    category: consent
+  - name: UserOptOut
+    category: consent
+  - name: LocationParticipationChanged
+    category: location
+event_count: 14
+schemas_published: false
+schemas_note: >-
+  Ovation publishes only the event NAMES. No payload schema, no example body, and no
+  AsyncAPI/JSON Schema is published by Ovation for any of these events; the schemas are
+  Olo's. Nothing was derived or invented to fill that gap.
+related_integrations:
+  - partner: Bbot
+    source: https://ovation.gitbook.io/ovation-onboarding/integrations/bbot-integration
+    mechanism: >-
+      Not a webhook. The customer pastes the Ovation `locationID` into Bbot's
+      "API Key/ID for Integration" field under Account Settings > Feedback and
+      Intelligence. Per-location, configured on Bbot's side.
+  - partner: Olo
+    landing_page: https://go.ovationup.com/integration/
+x-evidence:
+  - {url: 'https://ovation.gitbook.io/llms.txt', status: 200, note: docs index that names the Olo Integration page}
+  - {url: 'https://ovation.gitbook.io/ovation-onboarding/integrations/olo-integration', status: 200}
+  - {url: 'https://ovationup.com/integrations/', status: 200, note: 50+ partner listings, no API or webhook reference}

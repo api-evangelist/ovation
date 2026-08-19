@@ -1,0 +1,131 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://ovationup.com/legal/, https://ovationup.com/data-processing-agreement/,
+  https://ovationup.com/subprocessors/, https://ovationup.com/privacy-policy/
+description: >-
+  Ovation's published compliance posture, read from its own legal documents. Ovation
+  has a real, named certification — SOC 2 Type 2 — stated in the body of its Data
+  Processing Agreement and carried as an AICPA "SOC for Service Organizations" badge in
+  the site footer, so a Compliance pointer is warranted. It has NO trust center, NO
+  security page, NO security.txt and NO vulnerability disclosure programme, so no
+  TrustCenter, Security or VulnerabilityDisclosure pointer is emitted. The API-technical
+  standards below are all recorded false: with no published OpenAPI, no auth
+  documentation and no reference, there is no evidence for any of them, and absence of
+  evidence is recorded as non-conformance rather than guessed either way.
+standards:
+  - id: soc2-type2
+    conforms: true
+    evidence: >-
+      Data Processing Agreement §4.1: "Ovation shall maintain appropriate technical and
+      organizational measures, including its SOC 2 Type 2 certification, to protect the
+      security, confidentiality, and integrity of Client Personal Data". Re-stated twice
+      more in the DPA, where the SOC 2 Type 2 certification is deemed inserted in place
+      of Annex II of both the EU Standard Contractual Clauses and the UK SCCs Addendum.
+      An AICPA "SOC for Service Organizations" badge appears in the footer of every
+      legal page.
+    source: https://ovationup.com/data-processing-agreement/
+    report_available: false
+    report_note: >-
+      The SOC 2 report itself is not offered for download and there is no trust portal
+      to request it from; the claim is textual only.
+  - id: gdpr
+    conforms: true
+    evidence: >-
+      A full Data Processing Agreement is published, incorporating the EU Standard
+      Contractual Clauses with Appendix A listing the parties and transfer description.
+      GDPR is referenced throughout the DPA and the Privacy Policy.
+    source: https://ovationup.com/data-processing-agreement/
+  - id: uk-gdpr
+    conforms: true
+    evidence: >-
+      The DPA incorporates the UK Standard Contractual Clauses Addendum (UK
+      Addendum/IDTA), mapping Appendix A onto Tables 1, 2 and 3.
+    source: https://ovationup.com/data-processing-agreement/
+  - id: eu-standard-contractual-clauses
+    conforms: true
+    evidence: DPA adopts the SCCs including Clause 9 (Use of sub-processors).
+    source: https://ovationup.com/data-processing-agreement/
+  - id: ccpa
+    conforms: true
+    evidence: >-
+      CCPA referenced in the Privacy Policy and legal pages, with a dedicated
+      "Do Not Sell My Personal Data" page published.
+    source: https://ovationup.com/do-not-sell-my-personal-information/
+  - id: subprocessor-transparency
+    conforms: true
+    evidence: >-
+      A named, dated sub-processor list is published (last updated 2025-03-04) with
+      eleven entities and their purpose and country: Amazon (cloud/hosting), MongoDB
+      Atlas, ClickHouse, Stripe (payments), Docusign, HubSpot, Intercom, Sinch Email,
+      New Relic, Bandwidth (SMS/voice), Salesforce. Ovation commits to notifying account
+      owners of new sub-processors.
+    source: https://ovationup.com/subprocessors/
+  - id: penetration-testing
+    conforms: true
+    evidence: >-
+      DPA §4.1: security measures "may include, but are not limited to, encryption in
+      transit and at rest, access controls, vulnerability management, employee security
+      training, logging and monitoring, and regular penetration testing."
+    source: https://ovationup.com/data-processing-agreement/
+  - id: iso-27001
+    conforms: false
+    evidence: Not claimed on any Ovation page.
+  - id: pci-dss
+    conforms: false
+    evidence: >-
+      Not claimed. Card processing is delegated to Stripe, which is named in the
+      sub-processor list for Payment Processing Services.
+  - id: hipaa
+    conforms: false
+    evidence: Not claimed; out of domain for restaurant guest feedback.
+  - id: fedramp
+    conforms: false
+    evidence: Not claimed.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No OAuth 2.0 surface is documented or discoverable. Both
+      /.well-known/oauth-authorization-server probes that returned 200 were SPA HTML
+      shells, not RFC 8414 documents; see well-known/ovation-well-known.yml.
+  - id: oidc
+    conforms: false
+    evidence: >-
+      Ovation's Summer 2025 release announces end-user SSO with Google and Microsoft,
+      which implies OIDC is consumed inside the product, but Ovation publishes no
+      OpenID Provider configuration and offers no OIDC surface to integrators. Recorded
+      false because there is no evidence of a published, conformant provider surface.
+  - id: openapi
+    conforms: false
+    evidence: >-
+      No OpenAPI or Swagger document found on any host after probing /openapi.json,
+      /openapi.yaml, /swagger.json, /api-docs, /v1/openapi.json, /docs and /redoc across
+      ovationup.com, www.ovationup.com, api.ovationup.com, v2.ovationup.com,
+      app.ovationup.com and ovation.gitbook.io.
+  - id: asyncapi
+    conforms: false
+    evidence: >-
+      No AsyncAPI document. Ovation consumes Olo webhooks rather than publishing an
+      event contract; see asyncapi/ovation-olo-webhooks.yml.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Error bodies observed anonymously are AWS API Gateway defaults
+      ({"message":"Forbidden"}), not application/problem+json.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: /.well-known/security.txt returns 404 or 403 on every Ovation host.
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: No deprecation or sunset policy published.
+  - id: a2a-agent-card
+    conforms: false
+    evidence: >-
+      /.well-known/agent-card.json and /.well-known/agent.json miss on every host. No
+      agent card was authored — this artifact type is search-only.
+x-evidence:
+  - {url: 'https://ovationup.com/legal/', status: 200}
+  - {url: 'https://ovationup.com/data-processing-agreement/', status: 200}
+  - {url: 'https://ovationup.com/subprocessors/', status: 200}
+  - {url: 'https://ovationup.com/privacy-policy/', status: 200}
+  - {url: 'https://ovationup.com/security/', status: 404}

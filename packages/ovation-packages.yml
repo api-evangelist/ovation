@@ -1,0 +1,71 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry search, PyPI, github.com/ovationup organization + repository listing,
+  and ovationup.com integration/pricing/platform pages
+description: >-
+  No first-party Ovation client library exists on any public package registry. This is
+  a recorded zero, not an unchecked gap. Ovation ships an SMS/dashboard product with
+  pre-built partner integrations; it does not distribute an SDK.
+package_count: 0
+official_package_count: 0
+packages: []
+searched:
+  - registry: npm
+    query: ovationup
+    result: no packages
+    url: https://registry.npmjs.org/-/v1/search?text=ovationup
+  - registry: pypi
+    query: ovation
+    result: name-collision — NOT this company
+    url: https://pypi.org/project/ovation/
+    version: 1.26.0
+    published: null
+    note: >-
+      OWNERSHIP CHECK FAILED, DELIBERATELY EXCLUDED. The PyPI package `ovation`
+      ("Ovation Python API") is published by Ovation.io, Inc. with home_page
+      https://ovation.io — a scientific/laboratory data-management company, an entirely
+      different business from Ovation Up, Inc. (ovationup.com), the restaurant guest
+      feedback platform this repo profiles. Claiming it would credit this company with
+      an SDK it never shipped. `published` is null because the date was not read once
+      ownership disqualified the package.
+  - registry: github
+    query: github.com/ovationup
+    result: organization exists, no first-party library
+    url: https://github.com/ovationup
+    note: >-
+      Verified via api.github.com/orgs/ovationup (HTTP 200). Organization created
+      2016-12-07, `blog` field is ovation.gitbook.io (which is how Ovation's GitBook
+      docs host was confirmed first-party). It has exactly 3 public repositories and
+      ALL THREE ARE FORKS of other people's projects, none of them an Ovation client:
+      node-escpos (ESC/POS receipt-printer driver, last pushed 2019-12-11), npos
+      (ESC/POS library, 2020-01-18), and webjack (Arduino audio-modem library,
+      2020-03-11). Nothing has been pushed to the org's public repos since March 2020.
+  - registry: rubygems
+    result: not searched — no Ruby surface indicated anywhere in Ovation's docs or site
+  - registry: maven-central
+    result: not searched — no JVM surface indicated
+  - registry: nuget
+    result: not searched — no .NET surface indicated
+  - registry: crates.io
+    result: not searched — no Rust surface indicated
+  - registry: packagist
+    result: not searched — no PHP surface indicated
+  - registry: pkg.go.dev
+    result: not searched — no Go surface indicated
+mobile_apps:
+  - platform: android
+    name: Ovation
+    id: com.ovation.urf
+    url: https://play.google.com/store/apps/details?id=com.ovation.urf
+    version: null
+    published: null
+    note: >-
+      End-user/operator mobile app, not a developer SDK. Recorded for completeness
+      only; it is not counted toward package_count and earns no SDKs pointer. Version
+      and date are null because Google Play publishes no unauthenticated metadata
+      endpoint equivalent to a package registry.
+sdks_pointer_emitted: false
+sdks_pointer_reason: >-
+  The sdk_count checks require at least one official first-party client library. Ovation
+  has none, so no `SDKs` pointer is wired in apis.yml.

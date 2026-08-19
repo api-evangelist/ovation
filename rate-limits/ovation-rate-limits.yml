@@ -1,0 +1,31 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: Ovation
+providerId: ovation
+generated: '2026-08-13'
+method: searched
+modified: '2026-08-13'
+source: >-
+  ovationup.com (full page + post sitemap walk), ovation.gitbook.io onboarding guide,
+  and live probes of api.ovationup.com
+description: >-
+  Ovation publishes no rate limits of any kind. limit_count is 0 by observation. This
+  is an honest zero recorded after searching every public surface Ovation operates.
+docs: null
+limit_count: 0
+limits: []
+headers: {}
+headers_observed: false
+responseCodes: {}
+detail: >-
+  Ovation has no developer portal, no API reference, and no published API terms, so
+  there is nowhere a limit could be documented. The only anonymously reachable endpoint
+  on the API host — https://api.ovationup.com/ping, HTTP 200, body "healthy" — returns
+  no RateLimit-*, X-RateLimit-* or Retry-After header. Every other path on that host
+  answers 403 before any rate-limit header could be emitted, so no runtime signal can
+  be observed without credentials. Nothing was inferred from the AWS API Gateway
+  platform default: a platform capability is not a published provider limit.
+x-evidence:
+  - {url: 'https://api.ovationup.com/ping', status: 200, note: 'body "healthy"; no rate-limit headers returned'}
+  - {url: 'https://api.ovationup.com/v1', status: 403, note: '{"message":"Forbidden"}'}
+  - {url: 'https://ovationup.com/terms-of-use/', status: 200, note: no API rate or usage limits stated}

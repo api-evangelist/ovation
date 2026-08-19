@@ -1,0 +1,73 @@
+generated: '2026-08-13'
+method: searched
+source: https://ovationup.com/post-sitemap.xml
+docs: https://ovationup.com/blog-and-news/
+description: >-
+  Ovation ships dated, named seasonal product release posts on its own site. This is a
+  PRODUCT changelog, not an API changelog — Ovation publishes no API version history,
+  no dated API versions, and no breaking-change notices, because it publishes no API
+  reference. The entries below are the release posts located by walking Ovation's
+  WordPress post sitemap; the live posts are the source of truth.
+versioning:
+  scheme: seasonal-named-release
+  pattern: '<Season> <Year> Release'
+  current: Spring 2026
+  current_date: '2026-05-27'
+  api_versioning: none-published
+  api_versioning_note: >-
+    No API version scheme is published. The API host answers on unversioned paths and
+    on /v1 and /v2, but all of them return 403 to anonymous callers, so no version
+    convention can be confirmed without credentials.
+cadence:
+  observed: roughly seasonal, 1-4 per year
+  gaps: >-
+    Spring 2025 (Jul), Summer 2025 (Aug), Fall 2025 (Oct), then a gap to Spring 2026
+    (May). No Winter 2025/26 release post exists and no Summer 2026 release post had
+    been published as of 2026-08-13.
+breaking_change_policy: none-published
+entries:
+  - version: Spring 2026
+    date: '2026-05-27'
+    url: https://ovationup.com/spring-2026-release/
+    latest: true
+    breaking: []
+    additions:
+      - Brand Voice — AI responses written in the brand's own tone and style
+      - Menu Item Survey Targeting — trigger survey questions based on what the guest actually ordered
+      - Menu Intelligence — consolidates menu data and ties it to guest sentiment
+      - Mobile Dashboard — real-time performance metrics in the mobile app
+      - Estimated Revenue Saved — quantifies recovered guests in dollars, not headcount
+    api_related: []
+  - version: Fall 2025
+    date: '2025-10-14'
+    url: https://ovationup.com/fall-2025-release/
+    breaking: []
+    additions: []
+    note: Entry recorded from the sitemap lastmod; feature list not captured this pass.
+  - version: Summer 2025
+    date: '2025-08-06'
+    url: https://ovationup.com/summer-2025-release/
+    breaking: []
+    additions:
+      - Competitive Pulse — compare guest experience against up to five competitors per location using AI classification of public Google reviews across 34 restaurant categories
+      - Enhanced Reputation Management — team responses to public reviews visible in-platform
+      - API User Management — "Easily create, edit, and remove users via API"
+      - Bulk User Invites — invite and manage users in bulk from the platform
+      - Single Sign-On (SSO) — log in with Google or Microsoft credentials
+      - Crisp POS integration — survey texts ~30 minutes after ordering
+    api_related:
+      - >-
+        API User Management. This is the ONLY public, first-party statement anywhere on
+        Ovation's surface that an Ovation API exists and is usable by a customer. It
+        names a user-management capability and nothing else — no base URL, no operation
+        list, no authentication scheme, no reference link. Recorded verbatim.
+  - version: Spring 2025
+    date: '2025-07-02'
+    url: https://ovationup.com/spring-2025-release/
+    breaking: []
+    additions: []
+    note: Entry recorded from the sitemap lastmod; feature list not captured this pass.
+x-evidence:
+  - {url: 'https://ovationup.com/post-sitemap.xml', status: 200}
+  - {url: 'https://ovationup.com/spring-2026-release/', status: 200}
+  - {url: 'https://ovationup.com/summer-2025-release/', status: 200}

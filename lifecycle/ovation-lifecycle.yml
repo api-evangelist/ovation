@@ -1,0 +1,79 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  ovationup.com page + post sitemap walk, ovation.gitbook.io, DNS probes of
+  status./trust. subdomains, and live probes of api.ovationup.com
+description: >-
+  Ovation's operational lifecycle posture. Almost all of it is absent, and this file
+  records those absences with the probe that established each one. No StatusPage and no
+  Deprecation pointer is emitted in apis.yml, because Ovation publishes neither.
+versioning:
+  scheme: none-published
+  current: null
+  docs: null
+  note: >-
+    api.ovationup.com answers on /, /v1 and /v2 but returns 403 to anonymous callers on
+    all three, so no version convention can be confirmed. Product releases are named
+    seasonally (see changelog/ovation-changelog.yml); that is a product cadence, not an
+    API version scheme.
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: unknown
+  sunset_header_note: >-
+    RFC 8594 support cannot be observed — every non-/ping path on the API host answers
+    403 before any Sunset or Deprecation header would be emitted.
+sla:
+  url: null
+  published: false
+  uptime_target: null
+  note: >-
+    No SLA is published. The Customer Agreement Terms and Terms of Use were read and
+    state no uptime commitment.
+status_page:
+  url: null
+  published: false
+  probes:
+    - {host: status.ovationup.com, dns: NXDOMAIN}
+    - {url: 'https://ovationup.com/status/', status: 404}
+  note: >-
+    No status page on a subdomain, on the marketing site, or on a third-party provider
+    (no statuspage.io, status.io, instatus or better-uptime property found). Incidents
+    are not communicated publicly.
+health_endpoint:
+  url: https://api.ovationup.com/ping
+  status: 200
+  body: healthy
+  note: >-
+    An unauthenticated liveness endpoint exists on the API host and returns the literal
+    string "healthy". It is a health check, not a status page: it reports no component
+    breakdown, no incident history, and no scheduled maintenance, and it is not linked
+    from anywhere on Ovation's public surface. It does NOT earn a StatusPage pointer.
+support:
+  url: https://ovationup.com/contact-us/
+  email: hello@ovationup.com
+  phone: '+1 801-383-2821'
+  channels: [contact form, email, phone, in-app Intercom]
+  note: Intercom is named in Ovation's sub-processor list for customer support.
+deprecated_operations: []
+deprecated_operations_note: No OpenAPI exists from which deprecated operations could be derived.
+retired_integrations:
+  - partner: Bbot
+    note: >-
+      Bbot is documented in Ovation's onboarding guide (page last modified 2020-12-28)
+      but no longer appears in the Online Ordering list on ovationup.com/integrations/.
+      Bbot was acquired by DoorDash in 2022. Recorded as an observation about the docs
+      being stale, not as an Ovation deprecation notice — Ovation published none.
+docs_staleness:
+  host: ovation.gitbook.io
+  pages: 4
+  last_modified_range: '2020-12-02 to 2021-05-11'
+  note: >-
+    Ovation's only technical docs host has not been touched in over five years, while
+    the product shipped an API user-management capability in Summer 2025 that is
+    documented nowhere.
+x-evidence:
+  - {url: 'https://api.ovationup.com/ping', status: 200}
+  - {url: 'https://ovationup.com/status/', status: 404}
+  - {url: 'https://ovationup.com/terms-of-use/', status: 200}
+  - {url: 'https://ovation.gitbook.io/sitemap-pages.xml', status: 200}

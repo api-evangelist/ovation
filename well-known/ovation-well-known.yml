@@ -1,0 +1,147 @@
+generated: '2026-08-13'
+method: probed
+source: live GET probes of every host named in apis.yml plus the discovered API host
+description: >-
+  Results of probing the /.well-known/ discovery surface for every Ovation host.
+  NOTHING WAS FOUND. The marketing site (ovationup.com, WordPress/Avada) answers a
+  real HTML 404 for every /.well-known/ path. The API host (api.ovationup.com,
+  AWS API Gateway behind CloudFront) answers 403 {"message":"Forbidden"} for every
+  path including /.well-known/*, so nothing is readable anonymously. The two SPA
+  hosts (v2.ovationup.com, app.ovationup.com) answer HTTP 200 with an identical
+  837-byte HTML application shell for several /.well-known/ paths — that is a
+  single-page-app catch-all, NOT a document, and it is recorded here as a miss.
+  No WellKnown and no SecurityTxt pointer is emitted in apis.yml, because Ovation
+  serves no well-known document on any host.
+hosts:
+  - host: https://ovationup.com
+    note: WordPress marketing site; real HTML 404s
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+      - path: /robots.txt
+        status: 200
+        type: text/plain
+        note: Yoast-generated; Allow all, sitemap only. Not saved (no discovery value).
+  - host: https://api.ovationup.com
+    note: >-
+      Live AWS API Gateway (CloudFront edge 13.33.252.0/24). Anonymous callers get
+      403 {"message":"Forbidden"} on every path probed except /ping, which returns
+      HTTP 200 "healthy". /webhooks returns 403 {"message":"Missing Authentication
+      Token"}. This host is real and reachable but publishes no discovery surface.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/ai-plugin.json
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+      - path: /.well-known/agent.json
+        status: 403
+      - path: /ping
+        status: 200
+        type: text/plain
+        note: Returns the literal string "healthy". Only anonymous 200 on the host.
+  - host: https://v2.ovationup.com
+    note: >-
+      React SPA (customer login). Returns 200 with the same 837-byte HTML shell for
+      /.well-known/openid-configuration, /.well-known/oauth-authorization-server and
+      /.well-known/api-catalog. HTML shell, not a document — recorded as a miss.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 200
+        type: text/html
+        document: false
+        note: SPA catch-all HTML shell, not an OIDC discovery document.
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        type: text/html
+        document: false
+        note: SPA catch-all HTML shell, not an RFC 8414 document.
+      - path: /.well-known/api-catalog
+        status: 200
+        type: text/html
+        document: false
+        note: SPA catch-all HTML shell, not an RFC 9727 api-catalog.
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://app.ovationup.com
+    note: Same SPA build as v2.ovationup.com; identical catch-all behaviour.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 200
+        type: text/html
+        document: false
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        type: text/html
+        document: false
+      - path: /.well-known/api-catalog
+        status: 200
+        type: text/html
+        document: false
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://ovation.gitbook.io
+    note: >-
+      Ovation's GitBook docs host (confirmed first-party — it is the `blog` field of
+      the github.com/ovationup organization). Serves a real llms.txt; no well-known.
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /openapi.json
+        status: 404
+      - path: /llms.txt
+        status: 200
+        type: text/plain
+        file: ../llms/ovation-llms.txt
+        note: >-
+          Redirects to /ovation-onboarding/llms.txt. Saved verbatim to
+          llms/ovation-llms.txt (GitBook-generated index of the four onboarding pages).
+      - path: /robots.txt
+        status: 200
+        type: text/plain
+        note: >-
+          Carries a Content-Signal header line "ai-train=yes, search=yes, ai-input=yes".
+          This is GitBook's platform default, not an Ovation-authored consent signal,
+          so no consent/identity pointer is emitted from it.
+subdomains_checked:
+  - {host: status.ovationup.com, dns: NXDOMAIN}
+  - {host: trust.ovationup.com, dns: NXDOMAIN}
+  - {host: developer.ovationup.com, dns: NXDOMAIN}
+  - {host: developers.ovationup.com, dns: NXDOMAIN}
+  - {host: docs.ovationup.com, dns: NXDOMAIN}
+  - {host: mcp.ovationup.com, dns: NXDOMAIN}
+  - {host: api.ovationup.com, dns: resolves, note: live AWS API Gateway}
+  - {host: go.ovationup.com, dns: resolves, note: HubSpot-hosted landing pages; 504 at fetch time}

@@ -1,0 +1,8 @@
+# Ovation Onboarding
+
+## Ovation Onboarding
+
+- [Initial page](https://ovation.gitbook.io/ovation-onboarding/master.md)
+- [Purchasing](https://ovation.gitbook.io/ovation-onboarding/purchasing.md): Below are the sites that we use to purchase at Ovation.
+- [Bbot Integration](https://ovation.gitbook.io/ovation-onboarding/integrations/bbot-integration.md): How to connect Bbot to Ovation
+- [Olo Integration](https://ovation.gitbook.io/ovation-onboarding/integrations/olo-integration.md)
