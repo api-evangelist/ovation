@@ -1,4 +1,4 @@
-# Ovation (ovation)
+# Ovation
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,60 +64,106 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ovation is an AI-first guest experience and feedback platform for restaurants, founded by Zack Oates and voted the #1 guest feedback platform in a RestaurantOwner.com survey. It uses a frictionless, SMS-based two-question survey to capture real-time guest sentiment on- and off-premise, then applies AI to categorize feedback across 35+ restaurant-specific topics, surface operational insights, generate guest-recovery responses, manage online reviews, and run text marketing campaigns. Ovation connects to 50+ POS, online ordering, and loyalty systems, including Olo, to source guest interactions. These are pre-built partner integrations; Ovation does not publish a public, self-service developer API or API reference. Where integration is technical it is inbound and partner-driven: for example, Ovation receives Olo webhook events (OrderPlaced, OrderClosed, OrderCancelled, GuestOptIn, UserOptOut, and similar) authenticated with a shared secret, and the connection is configured directly through the partner's customer success and developer teams rather than via a self-serve Ovation API. Integration access is arranged directly with the company.
+Ovation is an AI-first guest experience and feedback platform for restaurants, founded by Zack Oates and voted the #1 guest feedback platform in a RestaurantOwner.com survey. It uses a frictionless, SMS-based two-question survey to capture real-time guest sentiment on- and off-premise, then applies AI to categorize feedback across 35+ restaurant-specific topics, surface operational insights, generate guest-recovery responses, manage online reviews, and run text marketing campaigns. Ovation connects to 50+ POS, online ordering, and loyalty systems, including Olo, to source guest interactions. These are pre-built partner integrations. Ovation does operate an API — its Summer 2025 release announced API User Management, "easily create, edit, and remove users via API", and the API host api.ovationup.com is live — but no public API reference, OpenAPI definition, developer portal, or SDK is published anywhere, and anonymous calls to that host are refused. Where integration is technical it is inbound and partner-driven: for example, Ovation receives Olo webhook events (OrderPlaced, OrderClosed, OrderCancelled, GuestOptIn, UserOptOut, and similar) authenticated with a shared secret, and the connection is configured directly through the partner's customer success and developer teams rather than via a self-serve Ovation API. Integration access is arranged directly with the company.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/ovation/refs/heads/main/apis.yml)
+**Areas:** Restaurant · Guest Feedback · Guest Experience · Reputation Management · SMS Marketing · Analytics
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Ovation on APIs.io
 
-## Tags:
+Everything profiled for Ovation is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ovation/](https://apis.io/providers/ovation/)** — or go straight to one of the APIs or properties below.
 
- - Restaurant
- - Guest Feedback
- - Guest Experience
- - Reputation Management
- - SMS Marketing
- - Analytics
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-06-02
-- **Modified:** 2026-06-02
+#### AsyncAPI (1)
 
-## APIs
+Event-driven and webhook contracts.
 
+- [Ovation Olo Webhooks](https://apis.io/asyncapis/ovation/ovation-olo-webhooks/)
 
-#### Tags:
+#### Security (1)
 
- - Integrations
- - Guest Feedback
- - Webhooks
- - Point Of Sale
- - Online Ordering
- - Loyalty
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Ovation Domain Security](https://apis.io/security/ovation/ovation-domain-security/)
 
-- [Documentation](https://ovationup.com/integrations/)
-- [Documentation — Onboarding & Integration Guide](https://ovation.gitbook.io/)
-- [Documentation — Olo Integration](https://go.ovationup.com/integration/)
+#### Plans and pricing (1)
 
-## Common Properties
+Published plans, tiers and prices.
+
+- [Ovation Plans Pricing](https://apis.io/plans/ovation/ovation-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ovation Rate Limits](https://apis.io/rate-limits/ovation/ovation-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://ovationup.com/)
 - [Documentation](https://ovationup.com/integrations/)
-- [Documentation — Onboarding & Integration Guide](https://ovation.gitbook.io/)
-- [GitHubOrganization](https://github.com/ovationup)
-- [SignUp](https://ovationup.com/pricing/)
-- [Login](https://v2.ovationup.com/login)
 - [Pricing](https://ovationup.com/pricing/)
+- [Sign up](https://ovationup.com/pricing/)
 - [Support](https://ovationup.com/contact-us/)
 - [Blog](https://ovationup.com/blog/)
-- [LinkedIn](https://www.linkedin.com/company/ovationup)
-- [X](https://x.com/ovationup)
+- [Compliance](https://ovationup.com/data-processing-agreement/)
+- [Terms of service](https://ovationup.com/terms-of-use/)
+- [Privacy policy](https://ovationup.com/privacy-policy/)
+- [GitHub](https://github.com/ovationup)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 36.0** — thin · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 52.6 |
+
+**Agent readiness 19.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 23.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ovation/](https://apis.io/providers/ovation/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ovation: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ovation/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
